@@ -1,0 +1,8 @@
+*.pyc
+
+data
+logs
+exp
+
+.idea/
+.vscode/

@@ -1,0 +1,60 @@
+
+################ Optimizer #############################################################################################
+optimizer:
+  type: "Adam"
+  beta1: 0.9
+  beta2: 0.999
+  weight_decay: 0.00001
+lr:
+  ae:      0.0003
+  dis_app: 0.0003
+  dis_pla: 0.0003
+  scheduler:
+    type: "none"
+
+################ Network ###############################################################################################
+weight_recon:   1.0   # DO NOT MODIFIED
+weight_dis_app: 0.1
+weight_dis_pla: 0.1
+recon_loss_type: "L2"
+gan_type: "lsgan"
+num_critic: 1
+weight_gp: 10.0
+weight_div: 10.0
+denoise: false
+smooth_label: false
+
+################ Training ##############################################################################################
+gpu: "cuda:3"
+evaluate_only: false
+batch-size: 16
+epochs: 15
+workers: 8
+checkpoint: ""
+# seed: 0
+
+################ Logging ###############################################################################################
+log_dir: "logs/mnist"
+model_name: "baseline"
+eval_mode: "step"
+eval_interval: 500
+eval_batch: 100000
+save_model_interval: 500
+# log option: "none", "file", "tb" or "pyplot"
+log:
+  grad_histogram: "tb"
+  viz_2d: "none"
+  correlation: "none"
+  feature: "none"
+  pr: "none"
+  transform_image: "file"
+place_threshold: 3
+
+################ Dataset ###############################################################################################
+dataset_type: "MNIST"
+train_data_dir:
+  - "./data/MNIST"
+  - "./data/MNIST"
+eval_data_dir:
+  - "./data/MNIST"
+  - "./data/MNIST"
