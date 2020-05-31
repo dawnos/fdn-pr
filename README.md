@@ -24,7 +24,4 @@ We develop our code under anaconda, with following depenencies (not listed fully
 ## Place recognition:
 `python main.py config/pr.yaml`
 
-# Notice
-The code is under reconstruction. Full scripts to reproduce the results will be provided after acceptance.
-
 
